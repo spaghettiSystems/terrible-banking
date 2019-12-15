@@ -91,7 +91,7 @@ void MainWindow::on_pushButton_2_clicked()
             QVariant modifiedData = middleModel->data(index);
             QVariant modifiedDataCategory = middleModel->data(index.parent());
             QVariant modifiedDataID = middleModel->data(index.parent().parent());
-            unsigned __int64 id = modifiedDataID.toULongLong();
+            uint64_t id = modifiedDataID.toULongLong();
             if(modifiedDataCategory.toString().compare("First Name") == 0){
                 mainDB.editRecordByID(id, modifiedData.toString().toStdString());
             }
@@ -141,7 +141,7 @@ void MainWindow::on_pushButton_4_clicked()
         return;
     }
     QModelIndex finalIndex = (index.parent().isValid())? (index.parent().parent().isValid())? index.parent().parent():index.parent():index;
-    unsigned __int64 id = model->data(finalIndex).toULongLong();
+    uint64_t id = model->data(finalIndex).toULongLong();
     mainDB.deleteRecordByID(id);
     model->removeRow(finalIndex.row());
 }

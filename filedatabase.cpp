@@ -75,7 +75,7 @@ void fileDatabase::deleteRecord(int index) {
     this->saveDatabase();
 }
 
-void fileDatabase::deleteRecordByID(unsigned __int64 id) {
+void fileDatabase::deleteRecordByID(uint64_t id) {
     int index = searchRecord(id);
     if (index < 0){
         return;
@@ -83,8 +83,8 @@ void fileDatabase::deleteRecordByID(unsigned __int64 id) {
     deleteRecord(index);
 }
 
-vector<unsigned __int64> fileDatabase::listRecordedIDs() {
-    vector<unsigned __int64> toBeReturned;
+vector<uint64_t> fileDatabase::listRecordedIDs() {
+    vector<uint64_t> toBeReturned;
     for (record entry: this->dbBuffer) {
         toBeReturned.push_back(entry.id);
     }
@@ -104,7 +104,7 @@ void fileDatabase::editRecord(int index, string firstName, string lastName, int 
     saveDatabase();
 }
 
-void fileDatabase::editRecordByID(unsigned __int64 id, string firstName, string lastName, int bal, bool setBal){
+void fileDatabase::editRecordByID(uint64_t id, string firstName, string lastName, int bal, bool setBal){
     int index = searchRecord(id);
     if(index < 0){
         return;
@@ -112,7 +112,7 @@ void fileDatabase::editRecordByID(unsigned __int64 id, string firstName, string 
     editRecord(index, firstName, lastName, bal, setBal);
 }
 
-int fileDatabase::searchRecord(unsigned __int64 id) {
+int fileDatabase::searchRecord(uint64_t id) {
     int left = 0, right = dbBuffer.size(), m;
 
     while (left < right) {

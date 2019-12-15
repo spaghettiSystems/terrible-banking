@@ -6,7 +6,7 @@ using namespace std;
 class record
 {
 public:
-    unsigned __int64 id;
+    uint64_t id;
     string firstName;
     string lastName;
     int balance;

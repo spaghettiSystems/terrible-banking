@@ -9,8 +9,8 @@
 using namespace std;
 
 
-unsigned __int64 stringToInteger(string x) {
-    unsigned __int64 temp;
+uint64_t stringToInteger(string x) {
+    uint64_t temp;
     stringstream epic(x);
     epic >> temp;
     return temp;

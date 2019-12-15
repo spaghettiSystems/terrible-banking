@@ -6,6 +6,7 @@
 #include <QtCore>
 #include <QtGui>
 #include "filedatabase.h"
+#include "inttypes.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
