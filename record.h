@@ -3,6 +3,8 @@
 #include "main.h"
 using namespace std;
 
+uint64_t stringToInteger(string x);
+
 class record
 {
 public:
