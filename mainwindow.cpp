@@ -112,7 +112,6 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
 
-
 }
 
 void MainWindow::on_treeView_activated(const QModelIndex &index)
@@ -123,6 +122,9 @@ void MainWindow::on_treeView_activated(const QModelIndex &index)
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index)
 {
     if(!mainDB.initialized){
+        return;
+    }
+    if(ui->lineEdit_2->text().compare("") != 0){
         return;
     }
     modified.push_back(index);
@@ -188,15 +190,26 @@ void MainWindow::on_lineEdit_2_textChanged(const QString &arg1)
 
     middleModel->layoutChanged();
 
+    ui->treeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 }
 
 void MainWindow::on_lineEdit_2_editingFinished()
+{
+
+}
+
+void MainWindow::on_pushButton_3_clicked()
 {
     if(!mainDB.initialized){
         return;
     }
     middleModel->layoutAboutToBeChanged();
+    ui->lineEdit_2->setText("");
     middleModel->setFilterFixedString("");
     middleModel->layoutChanged();
     ui->treeView->expandAll();
+    ui->treeView->setEditTriggers(QAbstractItemView::DoubleClicked);
+
 }
+

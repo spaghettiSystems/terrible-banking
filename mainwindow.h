@@ -50,6 +50,8 @@ private slots:
 
     void on_lineEdit_2_editingFinished();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     void loadDatabase();
