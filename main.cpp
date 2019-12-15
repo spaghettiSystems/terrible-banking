@@ -9,12 +9,7 @@
 using namespace std;
 
 
-uint64_t stringToInteger(string x) {
-    uint64_t temp;
-    stringstream epic(x);
-    epic >> temp;
-    return temp;
-}
+
 
 
 int main(int argc, char *argv[])
