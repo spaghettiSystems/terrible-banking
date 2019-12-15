@@ -1,6 +1,12 @@
 #ifndef RECORD_H
 #define RECORD_H
-#include "main.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <chrono>
+#include <vector>
+#include <sstream>
+#include "inttypes.h"
 using namespace std;
 
 uint64_t stringToInteger(string x);
