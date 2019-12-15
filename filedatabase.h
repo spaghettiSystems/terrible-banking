@@ -1,6 +1,7 @@
 #ifndef FILEDATABASE_H
 #define FILEDATABASE_H
-#include "main.h"
+#include "inttypes.h"
+#include <vector>
 #include "record.h"
 
 using namespace std;
